@@ -25,6 +25,16 @@ class HomeController extends Controller {
       title,
     };
   }
+
+  // 从 service 获取数据
+  async getInfo() {
+    const { ctx, service } = this;
+    const { name, slogen } = await service.demo.info();
+    ctx.body = {
+      name,
+      slogen,
+    };
+  }
 }
 
 module.exports = HomeController;
