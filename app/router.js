@@ -7,5 +7,5 @@ module.exports = app => {
   const { router, controller } = app;
   router.get('/', controller.demo.index);
   router.get('/user/:id', controller.demo.user);
-  // router.post('/add', controller.demo.add);
+  router.post('/add', controller.demo.add);
 };
