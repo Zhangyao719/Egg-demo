@@ -21,6 +21,15 @@ module.exports = appInfo => {
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
+    security: {
+      csrf: {
+        // Cookie 中的字段名，默认为 csrfToken
+        cookieName: 'csrfToken',
+
+        // 通过 header 传递 CSRF token 的默认字段为 x-csrf-token
+        headerName: 'x-csrf-token',
+      },
+    },
   };
 
   return {
