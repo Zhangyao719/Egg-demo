@@ -35,6 +35,11 @@ class HomeController extends Controller {
       slogen,
     };
   }
+
+  // egg-router-plus
+  async handleRouterNamespace() {
+    this.ctx.body = '这是个 namespace 路由请求';
+  }
 }
 
 module.exports = HomeController;

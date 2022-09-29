@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "egg": "^2",
+    "egg-router-plus": "^2.0.0",
     "egg-scripts": "^2"
   },
   "devDependencies": {
