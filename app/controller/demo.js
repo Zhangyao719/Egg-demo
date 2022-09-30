@@ -40,6 +40,23 @@ class HomeController extends Controller {
   async handleRouterNamespace() {
     this.ctx.body = '这是个 namespace 路由请求';
   }
+
+  // egg-view-ejs template
+  async render() {
+    /*
+     * 在 Context 上提供了 3 个渲染接口，返回值均为 Promise:
+     * - 1. render(name, locals) 渲染模板文件, 并赋值给 ctx.body
+     * - 2. renderView(name, locals) 渲染模板文件, 仅返回不赋值
+     * - 3. renderString(tpl, locals) 渲染模板字符串, 仅返回不赋值
+     */
+    const { ctx } = this;
+    const data = { title: '我是 egg-view-ejs 模板' }; // 将 title 传入 index.html
+
+    // ctx.render 默认会去 view 文件夹寻找 index.html，这是 Egg 约定好的默认路径
+    await ctx.render('index.html', data);
+
+    // ctx.body = await ctx.renderView('index.html', data);
+  }
 }
 
 module.exports = HomeController;

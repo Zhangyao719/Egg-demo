@@ -9,4 +9,5 @@ module.exports = app => {
   const v1 = router.namespace('/cgi/v1');
 
   v1.get('/namespace', controller.demo.handleRouterNamespace);
+  v1.get('/render', controller.demo.render);
 };

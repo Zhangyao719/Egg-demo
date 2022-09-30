@@ -9,7 +9,8 @@
   "dependencies": {
     "egg": "^2",
     "egg-router-plus": "^2.0.0",
-    "egg-scripts": "^2"
+    "egg-scripts": "^2",
+    "egg-view-ejs": "^3.0.0"
   },
   "devDependencies": {
     "autod": "^3",

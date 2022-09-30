@@ -18,18 +18,23 @@ module.exports = appInfo => {
   // add your middleware config here
   config.middleware = [];
 
+  // egg-view 通用配置 https://www.eggjs.org/zh-CN/core/view
+  config.view = {
+    defaultViewEngine: 'ejs',
+    mapping: { '.html': 'ejs' }, // 指定 .html 文件 使用 ejs 进行渲染
+  };
+
+  // 安全配置
+  config.security = {
+    csrf: {
+      cookieName: 'csrfToken', // Cookie 中的字段名，默认为 csrfToken
+      headerName: 'x-csrf-token', // 通过 header 传递 CSRF token 的默认字段为 x-csrf-token
+    },
+  };
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
-    security: {
-      csrf: {
-        // Cookie 中的字段名，默认为 csrfToken
-        cookieName: 'csrfToken',
-
-        // 通过 header 传递 CSRF token 的默认字段为 x-csrf-token
-        headerName: 'x-csrf-token',
-      },
-    },
   };
 
   return {

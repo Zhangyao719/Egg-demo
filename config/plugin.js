@@ -10,4 +10,9 @@ module.exports = {
     enable: true,
     package: 'egg-router-plus',
   },
+
+  ejs: {
+    enable: true,
+    package: 'egg-view-ejs',
+  },
 };
