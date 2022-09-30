@@ -32,6 +32,19 @@ module.exports = appInfo => {
     },
   };
 
+  exports.mysql = {
+    // 单数据库信息配置
+    client: {
+      host: 'localhost',
+      port: '3306',
+      database: 'test', // 新建的数据库名称
+      user: 'root', // 用户名
+      password: 'root', // 初始化密码，没设置的可以不写
+    },
+    app: true, // 是否加载到 app 上，默认开启
+    agent: false, // 是否加载到 agent 上，默认关闭
+  };
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',

@@ -57,6 +57,13 @@ class HomeController extends Controller {
 
     // ctx.body = await ctx.renderView('index.html', data);
   }
+
+  // egg-mysql
+  async mysql() {
+    const { ctx } = this;
+    const result = await ctx.service.demo.getSqlData();
+    ctx.body = result;
+  }
 }
 
 module.exports = HomeController;

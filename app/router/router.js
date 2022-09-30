@@ -9,4 +9,5 @@ module.exports = app => {
   router.get('/user/:id', controller.demo.user);
   router.post('/add', controller.demo.add);
   router.get('/info', controller.demo.getInfo);
+  router.get('/mysql', controller.demo.mysql);
 };
