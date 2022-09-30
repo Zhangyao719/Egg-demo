@@ -16,6 +16,7 @@
   "devDependencies": {
     "autod": "^3",
     "autod-egg": "^1",
+    "cross-env": "^7.0.3",
     "egg-bin": "^4",
     "egg-ci": "^2",
     "egg-mock": "^4",
@@ -28,7 +29,7 @@
   "scripts": {
     "start": "egg-scripts start --daemon --title=egg-server-Egg-todomvc",
     "stop": "egg-scripts stop --title=egg-server-Egg-todomvc",
-    "dev": "egg-bin dev",
+    "dev": "cross-env EGG_SERVER_ENV=local egg-bin dev",
     "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",

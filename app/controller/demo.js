@@ -18,11 +18,14 @@ class HomeController extends Controller {
 
   // post 请求获取
   async add() {
-    const { ctx } = this;
+    const { ctx, app } = this;
     const { title } = ctx.request.body;
     // Egg 框架内置了 bodyParser 中间件来对 POST 请求 body 解析成 object 挂载到 ctx.request.body 上
     ctx.body = {
       title,
+      // eggEnv: EGG_SERVER_ENV,
+      processEnv: process.env,
+      configEnv: app.config.env,
     };
   }
 
