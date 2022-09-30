@@ -8,17 +8,9 @@ class UserController extends Controller {
     const { name } = ctx.request.body;
     try {
       const result = await ctx.service.user.addUser(name);
-      ctx.body = {
-        code: 200,
-        msg: '添加成功',
-        data: result,
-      };
+      ctx.success('添加成功', result);
     } catch (error) {
-      ctx.body = {
-        code: 500,
-        msg: '添加失败',
-        data: null,
-      };
+      ctx.error('添加失败', 500, error);
     }
   }
 
@@ -28,17 +20,9 @@ class UserController extends Controller {
     const { id } = ctx.params;
     try {
       const result = await ctx.service.user.editUser(id, name);
-      ctx.body = {
-        code: 200,
-        msg: '修改成功',
-        data: result,
-      };
+      ctx.success('修改成功', result);
     } catch (error) {
-      ctx.body = {
-        code: 500,
-        msg: '修改失败',
-        data: null,
-      };
+      ctx.error('修改失败', 500, error);
     }
   }
 
@@ -46,17 +30,9 @@ class UserController extends Controller {
     const { ctx } = this;
     try {
       const result = await ctx.service.user.deleteUser(ctx.params.id);
-      ctx.body = {
-        code: 200,
-        msg: '删除成功',
-        data: result,
-      };
+      ctx.success('删除成功', result);
     } catch (error) {
-      ctx.body = {
-        code: 500,
-        msg: '删除失败',
-        data: null,
-      };
+      ctx.error('删除失败', 500, error);
     }
   }
 }
