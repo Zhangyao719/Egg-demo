@@ -10,7 +10,7 @@ module.exports = appInfo => {
    * built-in config
    * @type {Egg.EggAppConfig}
    **/
-  const config = exports = {};
+  const config = (exports = {});
 
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1664180586982_2821';
@@ -43,6 +43,10 @@ module.exports = appInfo => {
     },
     app: true, // 是否加载到 app 上，默认开启
     agent: false, // 是否加载到 agent 上，默认关闭
+  };
+
+  config.jwt = {
+    secret: process.env.TOKEN_KEY,
   };
 
   // add your user config here
